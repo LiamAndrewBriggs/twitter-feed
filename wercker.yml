@@ -44,7 +44,7 @@ deploy-to-cluster:
     - kubectl:
         name: set context
         server: $KUBERNETES_MASTER
-        #username: $KUBERNETES_USERNAME
+        username: $KUBERNETES_USERNAME
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
         command: config set-context $KUBERNETES_CONTEXT --namespace=$KUBERNETES_NAMESPACE --cluster=$KUBERNETES_CLUSTER_ID --user=$KUBERNETES_CLUSTER_USER
@@ -52,7 +52,7 @@ deploy-to-cluster:
     - kubectl:
         name: use context
         server: $KUBERNETES_MASTER
-        #username: $KUBERNETES_USERNAME
+        username: $KUBERNETES_USERNAME
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
         command: config use-context $KUBERNETES_CONTEXT
@@ -60,7 +60,7 @@ deploy-to-cluster:
     - kubectl:
         name: deploy to kubernetes
         server: $KUBERNETES_MASTER
-        #username: $KUBERNETES_USERNAME
+        username: $KUBERNETES_USERNAME
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
         command: apply -f kubernetes.yml
